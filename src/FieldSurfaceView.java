@@ -5,4 +5,8 @@ import java.awt.*;
  */
 public class FieldSurfaceView extends Canvas {
 
+    public CleverRobot mBot;
+
+    public FieldSurfaceView() {
+    }
 }

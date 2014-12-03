@@ -22,7 +22,7 @@ public class RobotFrame extends Frame {
         });
 
         //Создание объекта канвас, добавление его во фрейм.
-        Canvas canvas = new Canvas();
+        FieldSurfaceView canvas = new FieldSurfaceView();
         canvas.setSize(frameWidth, frameHeight);
         canvas.setVisible(true);
         this.add(canvas);
@@ -30,10 +30,11 @@ public class RobotFrame extends Frame {
         //Создание объекта-робота с координатами в центре канвас, его рисование.
         CleverRobot robot = new CleverRobot(canvas.getWidth() / 2, canvas.getHeight() / 2);
         Graphics g = getGraphics();
-        robot.paint(g);
+        g.setColor(Color.BLACK);
+        robot.drawRobot(g, robot.getX(), robot.getY());
     }
 
     public static void main (String[] args) {
-        RobotFrame frame = new RobotFrame("CleverRobot_2.0");
+        RobotFrame frame = new RobotFrame("CleverRobot 2.0");
     }
 }
